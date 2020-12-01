@@ -20,3 +20,10 @@ const monologueLines = [
 function theBatteries(accumulator, currentValue){
   return accumulator + currentValue
 }
+
+const totalBatteries = batteryBatches.reduce(theBatteries, 0)
+const allTheSentences = monologueLines.map(element => {
+  let splitSentence = element.split('')
+  let countTheWords = splitSentence.length
+  return countTheWords
+})
