@@ -17,23 +17,25 @@ const monologueLines = [
   'I am the one who knocks!'
 ];
 
-function theBatteries(accumulator, currentValue){
+function thebatteries(accumulator, currentValue) {
   return accumulator + currentValue
 }
 
-const totalBatteries = batteryBatches.reduce(theBatteries, 0)
+const totalBatteries = batteryBatches.reduce(thebatteries, 0)
 
 const allTheSentences = monologueLines.map(element => {
-  let splitSentence = element.split('')
-  let countTheWords = splitSentence.length
+  let splitSentence = element.split(" ");
+  let countTheWords = splitSentence.length;
   return countTheWords
 })
+//(14) [7, 7, 9, 11, 15, 15, 1, 6, 15, 6, 4, 14, 1, 6]
 
 const wordCountMap = allTheSentences.reduce((allSentencesLength, sentenceLength) => {
-  if (sentenceLength in allSentencesLength){
-    allSentencesLength[sentenceLength]++
-  }else{
-    allSentencesLength[sentenceLength] = 1
+  if (sentenceLength in allSentencesLength) {
+    allSentencesLength[sentenceLength]++;
   }
-  return allSentenceLength
-}, {})
+  else {
+    allSentencesLength[sentenceLength] = 1;
+  }
+  return allSentencesLength;
+}, {});
