@@ -16,3 +16,7 @@ const monologueLines = [
   'No.',
   'I am the one who knocks!'
 ];
+
+function theBatteries(accumulator, currentValue){
+  return accumulator + currentValue
+}
