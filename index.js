@@ -22,8 +22,18 @@ function theBatteries(accumulator, currentValue){
 }
 
 const totalBatteries = batteryBatches.reduce(theBatteries, 0)
+
 const allTheSentences = monologueLines.map(element => {
   let splitSentence = element.split('')
   let countTheWords = splitSentence.length
   return countTheWords
 })
+
+const wordCountMap = allTheSentences.reduce((allSentencesLength, sentenceLength) => {
+  if (sentenceLength in allSentencesLength){
+    allSentencesLength[sentenceLength]++
+  }else{
+    allSentencesLength[sentenceLength] = 1
+  }
+  return allSentenceLength
+}, {})
